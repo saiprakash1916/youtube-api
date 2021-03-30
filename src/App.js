@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { Fragment } from "react";
+import SearchComponent from "./Component/SearchComponent";
+import Youtube from "./Component/Youtube";
+const App = () => {
+  let onTermSubmit = async term => {
+    let responce = await Youtube.get("/search", {
+      params: { q: term },
+    });
+    console.log(responce.data);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <section>
+        <header>
+          <SearchComponent onTermSubmit={onTermSubmit} />
+        </header>
+      </section>
+    </Fragment>
   );
-}
+};
 
 export default App;
