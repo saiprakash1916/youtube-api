@@ -25,10 +25,15 @@ input {
   margin-left: 150px;
   border-radius: 5px;
 }
+button {
+  width: 90px;
+  background-color: white;
+  border: 1px solid lightgray;
+}
 .search {
   position: relative;
-  top: 10px;
-  right: 40px;
+  top: 2px;
+  right: 5px;
 }
 .bars {
   position: absolute;
@@ -42,9 +47,10 @@ input {
   left: 220px;
   cursor: pointer;
 }
-.voice {
+.microphone {
   position: relative;
   top: 10px;
+  right: -10px;
   cursor: pointer;
 }
 .bell {
@@ -58,4 +64,22 @@ input {
   top: 10px;
   left: 300px;
   cursor: pointer;
+}
+main {
+  display: flex;
+}
+.itemBlock {
+  height: 120px;
+}
+img {
+  width: 200px;
+  height: 100px;
+}
+h4 {
+  font-size: 15px;
+  margin-left: 15px;
+}
+p {
+  font-size: 9px;
+  margin-left: 20px;
 }
